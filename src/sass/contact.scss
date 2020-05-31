@@ -1,0 +1,66 @@
+@import "global";
+
+.contactPage{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    color: $white;
+    &>div{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    h2{
+        height: 20vh;
+        @include header;
+        padding: 0 1vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .center{
+        height: 55vh;
+        display: flex;
+        flex-direction: column;
+    }
+    h1{
+        @include subheader;
+        width: 100%;
+        text-align: center;
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    .info{
+        height: 20vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+//        border: solid red 1px;
+         h3{
+            @include body;
+            width: 100%;
+            text-align: center;
+             height: fit-content;
+        }   
+        &.image{
+            flex-direction: row;
+            img{
+                object-fit: cover;
+                height: 60%;
+                width: auto;
+                margin: 0 1vw;
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+        }
+    }
+    .foot{
+        @include body;
+        position: absolute;
+        bottom: 1vh;
+        right: 1vw;
+        font-size: 1vw;
+    }
+}

@@ -1,0 +1,21 @@
+@import "global";
+
+.pageTransition{
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    div{
+        width: 0vw;
+        height: 100vh;
+        position: absolute;
+        &:nth-child(1){
+            background: $white;
+        }        
+        &:nth-child(2){
+            background: #202020;
+        }
+    }
+}

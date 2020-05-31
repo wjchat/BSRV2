@@ -1,0 +1,9 @@
+@import "global";
+    
+.title{
+    position: absolute;
+    @include subheader;
+    bottom: 0;
+    left: 23vw;
+    pointer-events: none;
+}

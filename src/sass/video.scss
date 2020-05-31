@@ -1,0 +1,23 @@
+@import "global";
+
+.video {
+  position: absolute;
+  width: 50vw;
+  height: 60.1vh;
+  position: absolute;
+  margin-left: 25vw;
+  opacity: 1;
+top: 20vh;
+//    pointer-events: none;
+  video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+      &:fullscreen{
+          cursor: default;
+      }
+  }
+    .role{
+        @include body;
+    }
+}
