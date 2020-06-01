@@ -53,7 +53,7 @@ const Cursor = props =>{
         <div ref = {div=>cursor2=div} className = "cursorContainer fadeAway">
             {cursorType}
         </div>
-        <div ref = {div=>cursor=div} className = "cursorContainer fadeAway">
+        <div ref = {div=>cursor=div} className = "cursorContainer fadeAway main">
             <div className= "cursor cursorTransform"></div>
         </div>        
     </div>

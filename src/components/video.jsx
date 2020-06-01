@@ -1,5 +1,5 @@
 import React,{useEffect} from 'react';
-import {gsap, Power3} from "gsap"
+import {gsap, Power3, Expo} from "gsap"
 import "../sass/video.scss"
 
 const Video = props =>{
@@ -7,11 +7,22 @@ const Video = props =>{
     useEffect(()=>{
         if(animate){
             if(props.show){
+                let role = animate.getElementsByClassName("roleBox")[0]
+                gsap.set(role,{
+                    opacity: 0,
+                    y: "1vw",
+                })
                 gsap.to(animate, props.time * .5,{
                     opacity: 1,
                     pointerEvents: "all",
                     scale: 1.2,
-                    ease: Power3.easeInOut,
+                    ease: Expo.easeInOut,
+                })
+                gsap.to(role, props.time * .5,{
+                    opacity: 1,
+                    y: "0vw",
+                    ease: "easeInOut",
+                    delay: props.time
                 })
                 let ob = animate
                 setTimeout(()=>{
@@ -23,17 +34,18 @@ const Video = props =>{
                     opacity: 0,
                     pointerEvents: "none",
                     scale: 1,
-                    ease: Power3.easeInOut,
+                    ease: Expo.easeOut,
                 })
             }
         }
-    }, [props.show, animate])
+    }, [props.show, animate, props.time])
     return(
         <div ref = {div=>animate=div} className = "video">
             <video src = {props.video} controls>
             Your browser does not support the video tag.
             </video>
-            <div className = "role fadeAway">{props.role}</div>
+            <div className = "roleBox"><div className = "role fadeAway">{props.role}</div></div>
+            
         </div>
         )
 }

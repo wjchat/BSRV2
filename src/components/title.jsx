@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import "../sass/title.scss"
-import {gsap, Power3, Power2} from "gsap"
+import {gsap, Power3, Power2, Expo} from "gsap"
 
 const Title = props =>{
     let animate
@@ -10,17 +10,17 @@ const Title = props =>{
             let tl = gsap.timeline();
             tl.to(animate, props.time / 2,{
                 opacity: 0,
-                x: -20 * props.direction,
-                ease: Power2.easeIn
+                x: -100 * props.direction,
+                ease: Expo.easeIn
             })
             tl.call(()=>updateTitle(props.title))
             tl.set(animate, {
-                x: 20 * props.direction,
+                x: 100 * props.direction,
             })
             tl.to(animate, props.time / 2,{
                 opacity: 1,
                 x: 0,
-                ease: Power2.easeOut
+                ease: Expo.easeOut
             })
         }
     }, [props.title, animate])
@@ -30,13 +30,15 @@ const Title = props =>{
                 gsap.to(animate, props.time * .5,{
                     opacity: 0,
                     scale: 1.2,
-                    ease: Power3.easeInOut,
+                    y: "10vw",
+                    ease: Expo.easeInOut,
                 })
             }else{
                 gsap.to(animate, props.time * .5 ,{
+                    y: "0vw",
                     opacity: 1,
                     scale: 1,
-                    ease: Power3.easeInOut,
+                    ease: Expo.easeOut,
                 })
             }
         }

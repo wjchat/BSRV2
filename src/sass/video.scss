@@ -17,7 +17,9 @@ top: 20vh;
           cursor: default;
       }
   }
-    .role{
+    .roleBox{
         @include body;
+        opacity: 0;
+        padding-top: 10px;
     }
 }

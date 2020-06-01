@@ -26,3 +26,10 @@ body{
     overflow: hidden;
     cursor: none;
 }
+.link{
+    opacity: .8;
+    transition: opacity .1s linear;
+    &:hover{
+        opacity: 1;
+    }
+}

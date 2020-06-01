@@ -24,7 +24,7 @@ const PageTransition = props =>{
             tl.set([one,two],{
             right: props.trigger === "right" ? "auto": 0,
               left: props.trigger === "right" ? 0: "auto",
-            }, `+=.6`)
+            }, `+=.1`)
             tl.set(document.getElementsByTagName("main"),{
                 display: "none",
             })

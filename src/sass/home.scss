@@ -14,7 +14,7 @@
       @include header;
       width: fit-content;
       height: 100%;
-      padding: 0 1vw;
+      padding: 0 2vw;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -40,7 +40,7 @@
         @include body;
         position: absolute;
         bottom: 1vh;
-        right: 1vw;
+        right: 2vw;
         font-size: 1vw;
     }
 }

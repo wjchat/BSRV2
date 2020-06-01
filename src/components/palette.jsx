@@ -1,6 +1,6 @@
 import React, { useEffect,useState, useCallback, useContext } from "react"
 import "../sass/palette.scss"
-import { gsap, Power3, Power2 } from "gsap"
+import { gsap, Power3, Power2, Expo } from "gsap"
 import LayoutContext from "./layoutContext.jsx"
 
 
@@ -37,29 +37,37 @@ let ctx = useContext(LayoutContext)
         palette.getElementsByClassName("color"),
         props.direction,
         1,
-        50
+        50,
+          0,
+          .63
       )
     } else {
       hoverAnimate(
         palette.getElementsByClassName("color"),
         props.direction,
         -1,
-        50
+        50, 
+          0,
+          .63
       )
     }
       updateCurrent(props.current)
   }, [props.current])
 
-  const hoverAnimate = useCallback((target, horizontal, vertical, amt, currentP) => {
+  const hoverAnimate = useCallback((target, horizontal, vertical, amt, currentP, length) => {
+      let time = .35
+      if(length !== undefined){
+          time = length
+      }
     if(amt === 25 && props.item.orderOfAppearance === currentP){
         return
     }else{
             let tl = gsap.timeline({paused: true})
             let stagger = horizontal * 0.03
-            let ease = vertical === 1 ? Power2.easeIn : Power2.easeIn
+            let ease = vertical === 1 ? Power3.easeIn : Power3.easeIn
             tl.staggerTo(
               target,
-              0.4,
+              time,
               {
                 height: `${amt + amt * vertical}%`,
                 ease: ease,

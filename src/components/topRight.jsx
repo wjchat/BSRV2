@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react"
-import { gsap, Power3 } from "gsap"
+import { gsap, Power3, Expo } from "gsap"
 import "../sass/topRight.scss"
 import { Link } from "gatsby"
 import LayoutContext from "./layoutContext.jsx"
@@ -18,31 +18,31 @@ const TopRight = props => {
           scale: 0.8,
           pointerEvents: "none",
         })
-        gsap.to(back, {
+        gsap.to(back, props.time * .5,{
           opacity: 1,
           scale: 1,
           pointerEvents: "all",
-          ease: Power3.easeInOut,
+          ease: Expo.easeInOut,
         })
-        gsap.to(contact, {
+        gsap.to(contact, props.time * .5,{
           opacity: 0,
           scale: 1.2,
           pointerEvents: "none",
-          ease: Power3.easeInOut,
+          ease: Expo.easeInOut,
         })
       }
       if (props.showVideo === false) {
-        gsap.to(contact, {
+        gsap.to(contact, props.time * .5,{
           opacity: 1,
           scale: 1,
           pointerEvents: "all",
-          ease: Power3.easeInOut,
+          ease: Expo.easeOut,
         })
-        gsap.to(back, {
+        gsap.to(back, props.time * .5,{
           opacity: 0,
           scale: 0.8,
           pointerEvents: "none",
-          ease: Power3.easeInOut,
+          ease: Expo.easeOut,
         })
       }
     }
@@ -54,6 +54,7 @@ const TopRight = props => {
         onClick={() => props.updateShow(false)}
       >
         <span
+        className = "link"
         onMouseEnter={() => ctx.cursorTransformation(true)}
         onMouseLeave={() => ctx.cursorTransformation(false)}
         >
@@ -62,18 +63,19 @@ const TopRight = props => {
       <h1
         ref={div => (contact = div)}
       >
-        <TransitionLink to="contact"
+        <TransitionLink 
+        className = "link"
+        to="contact"
         onMouseOver={() => ctx.cursorTransformation(true)}
         onMouseLeave={() => ctx.cursorTransformation(false)}
         exit = {{
-                  length: 3,
-                    trigger: ()=>ctx.triggerTrans("right")
+                  length: 1.4,
+                    trigger: ()=>ctx.triggerTrans("left")
               }}
         entry = {{
-//                  length: 2,
                   delay: .7,
               }}
-        >CONTACT</TransitionLink>
+        >BSR</TransitionLink>
       </h1>
     </div>
   )

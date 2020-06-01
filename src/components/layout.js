@@ -19,7 +19,7 @@ const Layout = (props) => {
             cursorType: cursorType,
             updateCursorType: (crs)=>updateCursorType(crs),
             cursorTransformation: (grow, color) => cursorTransformation(grow, color),
-            triggerTrans: (b)=>triggerTrans(b)
+            triggerTrans: (b)=>triggerTrans(b),
         })
     }, [cursorType, updateCursorType])
   return (

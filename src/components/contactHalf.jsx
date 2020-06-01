@@ -9,10 +9,10 @@ const ContactHalf = props => {
   useEffect(() => {
     if (background) { 
         gsap.to(background, 0.2, {
-          backgroundColor: props.focus === props.item ? black : white,
+          backgroundColor: props.focus === props.item ? white : black,
         })
         gsap.to(background.getElementsByClassName("change"), 0.2, {
-          color: props.focus === props.item ? white : black,
+          color: props.focus === props.item ? black : white,
         })
       }
   }, [props.focus, background, props.item])

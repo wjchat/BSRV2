@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useContext } from "react"
 
-import { gsap, Power3, Power2 } from "gsap"
+import { gsap, Power3, Power2, Power4, Expo } from "gsap"
 
 import LayoutContext from "./layoutContext.jsx"
 import PaletteContainer from "./paletteContainer.jsx"
@@ -9,13 +9,15 @@ import Title from "./title.jsx"
 import TopRight from "./topRight.jsx"
 import Video from "./video.jsx"
 import "../sass/home.scss"
+import TransitionLink from "gatsby-plugin-transition-link"
 
 
 let timer = 0;
 const Home = props => {
     let ctx = useContext(LayoutContext)
   let reel
-  let time = 0.8
+  let contact
+  let time = 1.2
   const [current, updateCurrent] = useState(1)
   const [prev, updatePrev] = useState(0)
   const [currentInfo, updateInfo] = useState({
@@ -28,11 +30,32 @@ const Home = props => {
   const [globalTimer, updateGlobalTimer] = useState()
     
   useEffect(() => {
+    if(contact){
+        if(showVid){
+            gsap.to(contact, time * .5,{
+                scale: 1.2,
+                x: "15vw",
+                y: " -3vw",
+                opacity: 0,
+                pointerEvents: "none",
+                ease: Expo.easeInOut,
+            })
+        }else{
+            gsap.to(contact, time * .5,{
+                scale: 1,
+                x: "0vw",
+                y: " 0vw",
+                opacity: 1,
+                pointerEvents: "all",
+                ease: Expo.easeOut,
+            })
+            }
+    }
     window.addEventListener("keydown", handleKey)
     return () => {
       window.removeEventListener("keydown", handleKey)
     }
-  }, [current, showVid])
+  }, [current, showVid,contact])
 
   useEffect(() => {
     window.addEventListener("mousemove", handleMouseMove)
@@ -58,7 +81,7 @@ const Home = props => {
               gsap.to(items, .5,{
                   opacity: 0,
                   })
-            }, 2500)
+            }, 4000)
     }else{
           gsap.to(items, .1,{
               opacity: 1,
@@ -92,7 +115,7 @@ const Home = props => {
     if (reel) {
       gsap.to(reel, time, {
         x: `${(current - 1) * -50}vw`,
-        ease: Power3.easeInOut,
+        ease: Expo.easeInOut,
       })
     }
   }, [current, reel])
@@ -109,12 +132,28 @@ const handleMouseOut=useCallback(()=>{
   return (
     <div className="homeContainer">
       <div className="header fadeAway">
-        <h1>BSR</h1>
         <TopRight
           currentInfo={currentInfo}
           updateShow={b => updateShow(b)}
           showVideo={showVid}
+          time= {time}
         />
+        <h1 ref = {div=>contact=div}>
+        <TransitionLink 
+        className = "link"
+        to="contact"
+        onMouseOver={() => ctx.cursorTransformation(true)}
+        onMouseLeave={() => ctx.cursorTransformation(false)}
+        exit = {{
+                  length: 1.4,
+                    trigger: ()=>ctx.triggerTrans("right")
+              }}
+        entry = {{
+//                  length: 2,
+                  delay: .7,
+              }}
+        >CONTACT</TransitionLink>
+        </h1>
       </div>
       <div className="reel">
         <div

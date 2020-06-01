@@ -4,7 +4,7 @@
     height: 100vh;
     width: 100vw;
     display: flex;
-    color: $white;
+    color: $black;
     &>div{
         flex-grow: 1;
         display: flex;
@@ -40,19 +40,30 @@
 //        border: solid red 1px;
          h3{
             @include body;
-            width: 100%;
-            text-align: center;
-             height: fit-content;
+            width: fit-content;
+            margin: 0 auto;
+             padding: .2vw;
         }   
         &.image{
             flex-direction: row;
+            &>div{
+                width: 10vw;
+                &>div{
+                    height: 100%;
+                    width: 100%;
+                    position: relative;
+                }
+            }
             img{
                 object-fit: cover;
-                height: 60%;
+                height: 80%;
                 width: auto;
-                margin: 0 1vw;
-                margin-top: auto;
-                margin-bottom: auto;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                position: absolute;
             }
         }
     }

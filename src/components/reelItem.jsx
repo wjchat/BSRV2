@@ -2,7 +2,7 @@ import React, { useEffect, useContext, useCallback } from "react"
 
 import Img from "gatsby-image"
 import LayoutContext from './layoutContext.jsx' 
-import { gsap, Power3 } from "gsap"
+import { gsap, Power3, Expo } from "gsap"
 import "../sass/reelItem.scss"
 
 const ReelItem = props => {
@@ -31,31 +31,40 @@ const ReelItem = props => {
   useEffect(() => {
     if (animate) {
       if (props.showVideo) {
+          let xVal = "0vw";
+          if(props.item.orderOfAppearance > props.current){
+              xVal = "30vw"
+          }          
+          if(props.item.orderOfAppearance < props.current){
+              xVal = "-30vw"
+          }
         if (props.current === props.item.orderOfAppearance) {
-          gsap.to(animate, props.time * 0.5, {
+          gsap.to(animate, props.time * .5 , {
             opacity: 0,
             scale: 1.2,
             pointerEvents: "none",
-            ease: Power3.easeInOut,
+            ease: Expo.easeInOut,
           })
         } else {
-          gsap.to(animate, props.time * 0.5, {
+          gsap.to(animate, props.time* .5, {
             opacity: 0,
-            scale: 0.8,
+            scale: 1.2,
+            x: xVal,
             pointerEvents: "none",
-            ease: Power3.easeInOut,
+            ease: Expo.easeInOut,
           })
         }
       } else {
         gsap.to(animate, props.time * 0.5, {
           opacity: 1,
           scale: 1,
+          x: "0vw",
           pointerEvents: "all",
-          ease: Power3.easeInOut,
+          ease: Expo.easeOut,
         })
       }
     }
-  }, [props.showVideo, animate])
+  }, [props.showVideo, animate, props.item.orderOfAppearance, props.current])
     
   const handleClick = useCallback(() => {
     if (props.current === props.item.orderOfAppearance) {

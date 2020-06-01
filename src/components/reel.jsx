@@ -41,7 +41,6 @@ const Reel = props => {
       }
     }
   `)
-  console.log(data)
   let items = data.allStrapiProjects.edges
   const handleMouseLeave = () =>{
       ctx.cursorTransformation(false)

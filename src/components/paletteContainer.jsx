@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react"
 import "../sass/paletteContainer.scss"
 import { graphql, useStaticQuery } from "gatsby"
 import Palette from "./palette.jsx"
-import { gsap, Power3 } from "gsap"
+import { gsap, Power3, Expo } from "gsap"
 import LayoutContext from "./layoutContext.jsx"
 
 const PaletteContainer = props => {
@@ -38,18 +38,20 @@ const PaletteContainer = props => {
   }
   useEffect(() => {
     if (props.showVideo) {
-      gsap.to(animate, props.time * 0.5, {
+      gsap.to(animate, props.time * .5, {
         opacity: 0,
-        scale: 0.8,
+        scale: 1.2,
+        y: "15vw",
         pointerEvents: "none",
-        ease: Power3.easeInOut,
+        ease: Expo.easeInOut,
       })
     }else{
       gsap.to(animate, props.time * 0.5, {
         opacity: 1,
         scale: 1,
+        y: "0vw",
         pointerEvents: "all",
-        ease: Power3.easeInOut,
+        ease: Expo.easeOut,
       }) 
     }
   }, [props.showVideo])
