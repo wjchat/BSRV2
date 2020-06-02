@@ -18,10 +18,10 @@ const Video = props =>{
                     scale: 1.2,
                     ease: Expo.easeInOut,
                 })
-                gsap.to(role, props.time * .5,{
+                gsap.to(role, props.time * .3,{
                     opacity: 1,
                     y: "0vw",
-                    ease: "easeInOut",
+                    ease: Power3.easeOut,
                     delay: props.time
                 })
                 let ob = animate

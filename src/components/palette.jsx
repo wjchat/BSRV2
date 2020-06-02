@@ -48,14 +48,14 @@ let ctx = useContext(LayoutContext)
         -1,
         50, 
           0,
-          .63
+          .3
       )
     }
       updateCurrent(props.current)
   }, [props.current])
 
   const hoverAnimate = useCallback((target, horizontal, vertical, amt, currentP, length) => {
-      let time = .35
+      let time = .4
       if(length !== undefined){
           time = length
       }

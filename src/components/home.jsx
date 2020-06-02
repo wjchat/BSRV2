@@ -17,7 +17,7 @@ const Home = props => {
     let ctx = useContext(LayoutContext)
   let reel
   let contact
-  let time = 1.2
+  let time = 1.4
   const [current, updateCurrent] = useState(1)
   const [prev, updatePrev] = useState(0)
   const [currentInfo, updateInfo] = useState({
@@ -115,7 +115,7 @@ const Home = props => {
     if (reel) {
       gsap.to(reel, time, {
         x: `${(current - 1) * -50}vw`,
-        ease: Expo.easeInOut,
+        ease: "slick",
       })
     }
   }, [current, reel])

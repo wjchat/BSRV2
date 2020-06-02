@@ -10,6 +10,7 @@ import LayoutContext from "./layoutContext.jsx"
 import Email from "./email.jsx"
 import ImageSwitch from "./imageSwitch.jsx"
 
+
 const Contact = (props) =>{
     const [focus, updateFocus] = useState("first") 
     let ctx = useContext(LayoutContext)
