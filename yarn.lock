@@ -8015,6 +8015,11 @@ gsap@./gsap-bonus.tgz:
   version "3.3.0"
   resolved "./gsap-bonus.tgz#666e4e687eb5f5877b115c63bfdf4db1e3c8062f"
 
+gsap@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.3.0.tgz#1d3c94ad0e4c46742f5f751250afbdd238364ec5"
+  integrity sha512-MIcLOH8HCGvjyuLpzNBMKK+GdoL9wmJU+8nwauSZkqTyDlI1ugD0Sbhu7HO3805u7NqSv811murbu6eipVhJqw==
+
 gud@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/gud/-/gud-1.0.0.tgz#a489581b17e6a70beca9abe3ae57de7a499852c0"
