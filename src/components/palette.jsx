@@ -1,6 +1,6 @@
 import React, { useEffect,useState, useCallback, useContext } from "react"
 import "../sass/palette.scss"
-import { gsap, Power3, Power2, Expo } from "gsap"
+import { gsap, Power3, Power2, Expo } from "../esm/all"
 import LayoutContext from "./layoutContext.jsx"
 
 
@@ -39,7 +39,7 @@ let ctx = useContext(LayoutContext)
         1,
         50,
           0,
-          .63
+          .5
       )
     } else {
       hoverAnimate(
@@ -48,14 +48,14 @@ let ctx = useContext(LayoutContext)
         -1,
         50, 
           0,
-          .3
+          .5
       )
     }
       updateCurrent(props.current)
   }, [props.current])
 
   const hoverAnimate = useCallback((target, horizontal, vertical, amt, currentP, length) => {
-      let time = .4
+      let time = .3
       if(length !== undefined){
           time = length
       }

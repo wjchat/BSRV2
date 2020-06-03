@@ -1,6 +1,6 @@
 import React,{useEffect, useState, useContext, useCallback, useLayoutEffect} from "react"
 import "../sass/cursor.scss"
-import {gsap,Power3, Power2, Back} from 'gsap'
+import {gsap,Power3, Power2, Back} from "../esm/all"
 import arrow from "../assets/images/arrow.svg"
 import play from "../assets/images/play.svg"
 

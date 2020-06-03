@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import gsap from "gsap"
+import gsap from "../esm/all"
 
 const Email = props =>{
     let message

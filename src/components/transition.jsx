@@ -1,6 +1,6 @@
 import React, {useEffect,useContext} from "react"
 import "../sass/pageTransition.scss"
-import gsap from "gsap"
+import gsap from "../esm/all"
 import LayoutContext from "./layoutContext.jsx"
 
 const PageTransition = props =>{

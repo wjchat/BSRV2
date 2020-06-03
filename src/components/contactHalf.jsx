@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import gsap from "gsap"
+import gsap from "../esm/all"
 
 const ContactHalf = props => {
   let black = "#1B1818"

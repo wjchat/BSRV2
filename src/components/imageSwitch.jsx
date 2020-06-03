@@ -1,5 +1,5 @@
 import React from "react"
-import gsap from "gsap"
+import gsap from "../esm/all"
 
 const style = {
     position: "absolute",

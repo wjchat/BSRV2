@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useContext } from "react"
 
-import { gsap, Power3, Power2, Power4, Expo } from "gsap"
+import { gsap, Power3, Power2, Power4, Expo } from "../esm/all"
 
 import LayoutContext from "./layoutContext.jsx"
 import PaletteContainer from "./paletteContainer.jsx"

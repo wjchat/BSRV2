@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react"
-import { gsap, Power3, Expo } from "gsap"
+import { gsap, Power3, Expo } from "../esm/all"
 import "../sass/topRight.scss"
 import { Link } from "gatsby"
 import LayoutContext from "./layoutContext.jsx"

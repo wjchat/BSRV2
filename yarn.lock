@@ -8011,10 +8011,6 @@ graphql@^14.6.0:
   dependencies:
     iterall "^1.2.2"
 
-gsap@./gsap-bonus.tgz:
-  version "3.3.0"
-  resolved "./gsap-bonus.tgz#666e4e687eb5f5877b115c63bfdf4db1e3c8062f"
-
 gud@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/gud/-/gud-1.0.0.tgz#a489581b17e6a70beca9abe3ae57de7a499852c0"

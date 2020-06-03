@@ -1,5 +1,5 @@
 import React,{useEffect} from 'react';
-import {gsap, Power3, Expo} from "gsap"
+import {gsap, Power3, Expo} from "../esm/all"
 import "../sass/video.scss"
 
 const Video = props =>{

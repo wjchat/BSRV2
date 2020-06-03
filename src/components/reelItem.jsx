@@ -2,7 +2,7 @@ import React, { useEffect, useContext, useCallback } from "react"
 
 import Img from "gatsby-image"
 import LayoutContext from './layoutContext.jsx' 
-import { gsap, Power3, Expo } from "gsap"
+import { gsap, Power3, Expo } from "../esm/all"
 import "../sass/reelItem.scss"
 
 const ReelItem = props => {

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react"
 import "../sass/paletteContainer.scss"
 import { graphql, useStaticQuery } from "gatsby"
 import Palette from "./palette.jsx"
-import { gsap, Power3, Expo } from "gsap"
+import { gsap, Power3, Expo } from "../esm/all"
 import LayoutContext from "./layoutContext.jsx"
 
 const PaletteContainer = props => {

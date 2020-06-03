@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import "../sass/title.scss"
-import {gsap, Power3, Power2, Expo} from "gsap"
+import {gsap, Power3, Power2, Expo} from "../esm/all"
 
 const Title = props =>{
     let animate

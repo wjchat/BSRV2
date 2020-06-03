@@ -9,8 +9,8 @@ import LayoutContext from "./layoutContext.jsx"
 import cursorTransformation from './cursorTransformation.js'
 import PageTransition from "./transition.jsx"
 import {TransitionPortal} from "gatsby-plugin-transition-link"
-import { gsap } from "gsap";
-import { CustomEase } from "gsap/CustomEase";
+import { gsap } from "../esm/all";
+import { CustomEase } from "../esm/CustomEase";
 
 gsap.registerPlugin(CustomEase);
 const Layout = (props) => {  

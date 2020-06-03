@@ -1,4 +1,4 @@
-import {gsap,Power2,Power3} from "gsap";
+import {gsap,Power2,Power3} from "../esm/all";
 
 let transform = (grow, color) =>{
     let target = document.body.getElementsByClassName("cursorTransform")[0]
