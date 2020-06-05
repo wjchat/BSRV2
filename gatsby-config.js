@@ -40,6 +40,10 @@ module.exports = {
           // List of the Content Types you want to be able to request from Gatsby.
           "projects",
         ],
+        singleTypes: [
+          "about-ben",
+            "social-links",
+        ],
         queryLimit: 1000,
       },
     },

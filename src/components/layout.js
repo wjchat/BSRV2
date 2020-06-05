@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import "../assets/css/default.css"
 
 import Seo from "./seo"
+import Background from "./background.jsx"
 import Cursor from './cursor.jsx'
 import LayoutContext from "./layoutContext.jsx"
 import cursorTransformation from './cursorTransformation.js'
@@ -14,7 +15,7 @@ import { CustomEase } from "../esm/CustomEase";
 
 gsap.registerPlugin(CustomEase);
 const Layout = (props) => {  
-    CustomEase.create("slick", "M0,0 C0,0 0.164,0 0.22,0.064 0.309,0.166 0.289,0.432 0.3,0.51 0.338,0.788 0.39,0.882 0.458,0.926 0.546,0.982 0.698,1 1,1");
+    CustomEase.create("slick", ".25,.1,.25,1");
     CustomEase.create("slickIn", "M0,0 C0.5,0 0.826,0.086 0.87,0.112 0.965,0.169 0.9,0.23 1,1 ");
                       
     
@@ -42,6 +43,7 @@ const Layout = (props) => {
       <LayoutContext.Provider 
          value = {memoContext()}
          >
+             <Background />
           <main>{props.children}</main>
           <Cursor cursorType = {cursorType} />
           <TransitionPortal>

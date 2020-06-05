@@ -43,7 +43,7 @@ const ReelItem = props => {
             opacity: 0,
             scale: 1.2,
             pointerEvents: "none",
-            ease: Expo.easeInOut,
+            ease: "slick",
           })
         } else {
           gsap.to(animate, props.time* .25, {
@@ -51,7 +51,7 @@ const ReelItem = props => {
             scale: 1.2,
             x: xVal,
             pointerEvents: "none",
-            ease: Expo.easeIn,
+            ease: "slick",
           })
         }
       } else {

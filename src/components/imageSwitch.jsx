@@ -43,18 +43,21 @@ const ImageSwitch = props =>{
                 position: "relative",
             }}>
         <div style = {style}>
+        <a href={props.link} target = "_blank">
         <img 
         ref = {div=>imageOne=div}
         className = {props.className}
         onMouseEnter = {()=>handleMouseEnter()} 
         onMouseLeave = {()=>handleMouseLeave()} 
-        src={props.imageOne} alt={props.alt}/></div>
+        src={props.imageOne} alt={props.alt}/>
+        </a></div>
         
         <div style = {style2}>
         <img 
         style = {imgTwoStyle}
         ref = {div=>imageTwo=div}
-        src={props.imageTwo}/></div>
+        src={props.imageTwo}/>
+        </div>
     </div>)
 }
 

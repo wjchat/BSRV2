@@ -55,19 +55,19 @@ let ctx = useContext(LayoutContext)
   }, [props.current])
 
   const hoverAnimate = useCallback((target, horizontal, vertical, amt, currentP, length) => {
-      let time = .3
+      let time = props.time
       if(length !== undefined){
-          time = length
+          time = time * 2
       }
     if(amt === 25 && props.item.orderOfAppearance === currentP){
         return
     }else{
             let tl = gsap.timeline({paused: true})
-            let stagger = horizontal * 0.03
-            let ease = vertical === 1 ? Power3.easeIn : Power3.easeIn
+            let stagger = horizontal * 0.05
+            let ease = "ease"
             tl.staggerTo(
               target,
-              time,
+              time * .25,
               {
                 height: `${amt + amt * vertical}%`,
                 ease: ease,

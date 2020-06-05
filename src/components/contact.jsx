@@ -43,12 +43,14 @@ const Contact = (props) =>{
             <h1 className = "change">SOCIAL</h1>
             <div className = "info image">
                <ImageSwitch 
+               link = {props.insta}
                 onMouseEnter={() => ctx.cursorTransformation(true)}
                 onMouseLeave={() => ctx.cursorTransformation(false, black)}
                imageOne = {insta}
                imageTwo = {instaColor}
                />               
                <ImageSwitch 
+               link = {props.vimeo}
                 onMouseEnter={() => ctx.cursorTransformation(true)}
                 onMouseLeave={() => ctx.cursorTransformation(false, black)}
                imageOne = {vimeo}
@@ -70,7 +72,7 @@ const Contact = (props) =>{
                     <Email 
                     onMouseEnter = {()=>ctx.cursorTransformation(true)}
                     onMouseLeave = {()=>ctx.cursorTransformation(false, black)}
-                    email = {"benswansonralph@gmail.com"}
+                    email = {props.email}
                     message = {"EMAIL COPIED TO CLIPBOARD"}
                     />
                 </div>

@@ -16,13 +16,13 @@ const Video = props =>{
                     opacity: 1,
                     pointerEvents: "all",
                     scale: 1.2,
-                    ease: Expo.easeInOut,
+                    ease: "slick",
                 })
-                gsap.to(role, props.time * .3,{
+                gsap.to(role, props.time * 2,{
                     opacity: 1,
                     y: "0vw",
                     ease: Power3.easeOut,
-                    delay: props.time
+                    delay: props.time * .2
                 })
                 let ob = animate
                 setTimeout(()=>{

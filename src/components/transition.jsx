@@ -17,9 +17,11 @@ const PageTransition = props =>{
             })
             tl.to(one, time,{
                 width: "100vw",
+                ease: "easeOut"
             })
             tl.to(two, time,{
                 width: "100vw",
+                ease: "easeIn"
             }, `-=${time /2}`)
             tl.set([one,two],{
             right: props.trigger === "right" ? "auto": 0,
@@ -30,6 +32,7 @@ const PageTransition = props =>{
             })
             tl.to([one, two], time,{
                 width: "0vw",
+                ease: "easeOut"
             })
             tl.call(()=>ctx.triggerTrans(false))
         }

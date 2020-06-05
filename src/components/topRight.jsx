@@ -22,13 +22,13 @@ const TopRight = props => {
           opacity: 1,
           scale: 1,
           pointerEvents: "all",
-          ease: Expo.easeInOut,
+          ease: "slick",
         })
         gsap.to(contact, props.time * .5,{
           opacity: 0,
           scale: 1.2,
           pointerEvents: "none",
-          ease: Expo.easeInOut,
+          ease: "slick",
         })
       }
       if (props.showVideo === false) {

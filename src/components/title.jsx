@@ -8,19 +8,19 @@ const Title = props =>{
     useEffect(()=>{
         if(animate){
             let tl = gsap.timeline();
-            tl.to(animate, props.time * .25,{
+            tl.to(animate, props.time * .4,{
                 opacity: 0,
-                x: -100 * props.direction,
-                ease: "slickIn"
+                x: -80 * props.direction,
+                ease: "ease"
             })
             tl.call(()=>updateTitle(props.title))
             tl.set(animate, {
-                x: 100 * props.direction,
+                x: 80 * props.direction,
             })
-            tl.to(animate, props.time * .7,{
+            tl.to(animate, props.time * .6,{
                 opacity: 1,
                 x: 0,
-                ease: Expo.easeOut
+                ease: Power2.easeOut
             })
         }
     }, [props.title, animate])
@@ -31,7 +31,7 @@ const Title = props =>{
                     opacity: 0,
                     scale: 1.2,
                     y: "10vw",
-                    ease: Expo.easeIn,
+                    ease: "slick",
                 })
             }else{
                 gsap.to(animate, props.time * .5 ,{

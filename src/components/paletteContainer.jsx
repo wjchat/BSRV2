@@ -43,7 +43,7 @@ const PaletteContainer = props => {
         scale: 1.2,
         y: "15vw",
         pointerEvents: "none",
-        ease: Expo.easeInOut,
+        ease: "slick",
       })
     }else{
       gsap.to(animate, props.time * 0.5, {
@@ -74,6 +74,7 @@ const PaletteContainer = props => {
             direction={props.direction}
             current={props.current}
             item={item.node}
+            time = {props.time}
           />
         ))}
         <div className="bottomBorder"></div>
