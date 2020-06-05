@@ -13,7 +13,7 @@
     h2{
         height: 20vh;
         @include header;
-        padding: 0 1vw;
+        padding: $padding;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -66,12 +66,5 @@
                 position: absolute;
             }
         }
-    }
-    .foot{
-        @include body;
-        position: absolute;
-        bottom: 1vh;
-        right: 1vw;
-        font-size: 1vw;
     }
 }

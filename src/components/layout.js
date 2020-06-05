@@ -45,10 +45,10 @@ const Layout = (props) => {
          >
              <Background />
           <main>{props.children}</main>
-          <Cursor cursorType = {cursorType} />
           <TransitionPortal>
               <PageTransition trigger = {trigger}/>
           </TransitionPortal>
+            <Cursor cursorType = {cursorType} />
       </LayoutContext.Provider>   
       
     </>

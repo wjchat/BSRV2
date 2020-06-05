@@ -1,0 +1,51 @@
+@import "global";
+
+.aboutContainer {
+  width: 100vw;
+height: 100vh;
+  .header {
+    height: 20vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    h2 {
+      width: fit-content;
+      margin-left: auto;
+      @include header;
+      height: fit-content;
+    padding: $padding;
+    }
+  }
+  .content {
+      display: flex;
+      width: 66%;
+      margin-left: auto;
+      margin-right: auto;
+    & > .imageContainer {
+    margin-left: auto;
+    margin-right: auto;
+      height: 60vh;
+      width: 50%;
+      position: relative;
+      div {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
+    }
+      p{
+          @include body;
+          width: 40%;
+          margin-left: auto;
+          margin-right: auto;
+          height: 60vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          font-size: $bodySize;
+          text-align: left;
+          line-height: 110%;
+      }
+  }
+}

@@ -8,11 +8,26 @@
   margin-left: 25vw;
   opacity: 1;
 top: 20vh;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
 //    pointer-events: none;
+    img{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: 10vw;
+        width: 10vw;
+//        border: solid red 1px;
+        padding: 0;
+    }
   video {
     height: 100%;
     width: 100%;
     object-fit: cover;
+      opacity: 0;
       &:fullscreen{
           cursor: default;
       }

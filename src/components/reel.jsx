@@ -48,7 +48,7 @@ const Reel = props => {
   }
   return (
     <div
-      style={{ display: "flex" }}
+     className = "reelContainer"
       onMouseLeave={() =>handleMouseLeave()}
     >
       {items.map(item => (

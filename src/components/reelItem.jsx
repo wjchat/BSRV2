@@ -40,7 +40,7 @@ const ReelItem = props => {
           }
         if (props.current === props.item.orderOfAppearance) {
           gsap.to(animate, props.time * .5 , {
-            opacity: 0,
+            opacity: 1,
             scale: 1.2,
             pointerEvents: "none",
             ease: "slick",

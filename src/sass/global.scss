@@ -1,11 +1,13 @@
 $black: #1B1818;
 $white: #fffafa;
 $sans: "Lato", sans-serif;
+$bodySize: 1.2vw;
+$padding: 0 5vw;
 
 @mixin header{
     font-family: $sans;
     font-weight: 400;
-    font-size: 3vw;
+    font-size: 2vw;
     letter-spacing: .11vw;
 }
 @mixin subheader{
@@ -17,7 +19,7 @@ $sans: "Lato", sans-serif;
 @mixin body{
     font-family: $sans;
     font-weight: 300;
-    font-size: 2vw;
+    font-size: $bodySize;
     letter-spacing: .07vw
 }
 body{
@@ -25,6 +27,7 @@ body{
     color: $white;
     overflow: hidden;
     cursor: none;
+    opacity: 70%;
 }
 .link{
     opacity: .8;
@@ -32,4 +35,13 @@ body{
     &:hover{
         opacity: 1;
     }
+}
+.foot{
+    @include body;
+    position: absolute;
+    bottom: 1vh;
+    right: 0;
+    font-size: .7vw;
+    padding: $padding;
+    opacity: .5;
 }

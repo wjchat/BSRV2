@@ -15,9 +15,14 @@ import TransitionLink from "gatsby-plugin-transition-link"
 let timer = 0;
 const Home = props => {
     let ctx = useContext(LayoutContext)
+    useEffect(()=>{
+        setTimeout(()=>{
+            ctx.cursorTransformation(false)
+        }, 400)
+    }, [])
   let reel
   let contact
-  let time = 1
+  let time = 1.2
   const [current, updateCurrent] = useState(1)
   const [prev, updatePrev] = useState(0)
   const [currentInfo, updateInfo] = useState({
@@ -194,7 +199,11 @@ const handleMouseOut=useCallback(()=>{
         current={current}
         direction={prev < current ? 1 : -1}
       />
-      <p className = "change foot fadeAway">&copy;2020 Ben Swanson-Ralph</p>
+      <p className = "change foot fadeAway"><span
+      style = {{
+                  opacity: .5,
+              }}
+      >&copy;2020 Ben Swanson-Ralph</span></p>
     </div>
   )
 }

@@ -50,10 +50,9 @@ const TopRight = props => {
   return (
     <div className="topRight">
       <h1
-        ref={div => (back = div)}
-        onClick={() => props.updateShow(false)}
-      >
+       ref={div => (back = div)}>
         <span
+        onClick={() => props.updateShow(false)}
         className = "link"
         onMouseEnter={() => ctx.cursorTransformation(true)}
         onMouseLeave={() => ctx.cursorTransformation(false)}
@@ -61,11 +60,10 @@ const TopRight = props => {
         BACK</span>
       </h1>
       <h1
-        ref={div => (contact = div)}
-      >
+       ref={div => (contact = div)}>
         <TransitionLink 
         className = "link"
-        to="contact"
+        to="about-ben"
         onMouseOver={() => ctx.cursorTransformation(true)}
         onMouseLeave={() => ctx.cursorTransformation(false)}
         exit = {{

@@ -9,16 +9,18 @@ const Email = props =>{
     document.body.appendChild(el)
     el.select()
     document.execCommand("copy")
-    document.body.removeChild(el)   
-    gsap.set(message,{
+    document.body.removeChild(el)  
+    let tl = gsap.timeline()
+    tl.set(message,{
         opacity: 1,
+    })
+        .to(message, 1, {
+        opacity: 0,
+        delay: 2,
     })
     }
     const handleMouseLeave = () =>{
         props.onMouseLeave()
-        gsap.set(message,{
-            opacity: 0,
-        })
     }
     return(<>
         <h3 

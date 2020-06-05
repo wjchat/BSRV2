@@ -6,4 +6,9 @@
     bottom: 0;
     left: 23vw;
     pointer-events: none;
+      -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: $white;
+    -webkit-font-smoothing: antialiased;
+
 }

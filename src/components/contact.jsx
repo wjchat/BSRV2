@@ -16,7 +16,9 @@ const Contact = (props) =>{
     let ctx = useContext(LayoutContext)
     let black = "#1B1818"
     useEffect(()=>{
-        ctx.cursorTransformation(false, black)
+        setTimeout(()=>{
+            ctx.cursorTransformation(false, black)
+        }, 400)
     }, [])
     return(<div className = "contactPage">   
         <ContactHalf 
@@ -57,7 +59,6 @@ const Contact = (props) =>{
                imageTwo = {vimeoColor}
                /> 
             </div>
-            <p className = "change foot">&copy;2020 Ben Swanson-Ralph</p>
            </div>
             </ContactHalf>
             <ContactHalf 
@@ -77,6 +78,7 @@ const Contact = (props) =>{
                     />
                 </div>
                </div>
+            <p className = "change foot">&copy;2020 Ben Swanson-Ralph</p>
             </ContactHalf>
     </div>)
 }

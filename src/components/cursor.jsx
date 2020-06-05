@@ -2,7 +2,7 @@ import React,{useEffect, useState, useContext, useCallback, useLayoutEffect} fro
 import "../sass/cursor.scss"
 import {gsap,Power3, Power2, Back} from "../esm/all"
 import arrow from "../assets/images/arrow.svg"
-import play from "../assets/images/play.svg"
+import expand from "../assets/images/expand.svg"
 
 
 const Cursor = props =>{
@@ -33,19 +33,19 @@ const Cursor = props =>{
             }else if(props.cursorType === "left"){
                 updateCursorType(<img style = {{transform: "rotate(180deg)"}} src = {arrow} alt = "left"/>)
             }else if(props.cursorType === "play"){
-                updateCursorType(<img src={play} alt="play"/>)
+                updateCursorType(<img src={expand} alt="play"/>)
             }
         }
     },[props.cursorType, cursor, cursor2])
     const handleMove = useCallback((e) =>{
         gsap.to(cursorElem, .1, {
-            x: e.x - 65,
-            y: e.y - 65,
+            x: e.x - 45,
+            y: e.y - 45,
             ease: Power2.easeOut,
         })            
         gsap.to(cursorElem2, .5, {
-                x: e.x - 65,
-                y: e.y - 65,
+                x: e.x - 45,
+                y: e.y - 45,
                 ease: "easeIn",
             })
     }, [cursorElem, cursorElem2])

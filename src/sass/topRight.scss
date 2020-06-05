@@ -12,7 +12,7 @@
         width: fit-content;
         @include header;
         text-align: right;
-        padding:0 2vw;
+        padding: $padding;
         display: flex;
         flex-direction: column;
         justify-content: center;
