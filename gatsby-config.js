@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `The portfolio of Ben Swanson-Ralph, videographer extraordinaire.`,
+    title: `The portfolio of Ben Swanson-Ralph.`,
     description: `The portfolio of cinemetographer, editor, and photographer Ben Swanson-Ralph.`,
     author: `Will Chatterson`,
   },

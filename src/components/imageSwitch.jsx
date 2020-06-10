@@ -22,7 +22,6 @@ const ImageSwitch = props =>{
     let imageTwo
     const handleMouseEnter = () =>{
         props.onMouseEnter();
-        console.log(imageTwo)
         gsap.to(imageTwo, .1,{
             opacity: 1,
         })        

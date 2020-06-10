@@ -142,8 +142,6 @@ const handleMouseOut=useCallback(()=>{
 const moveReel = useCallback((direction)=>{
     let len = document.body.getElementsByClassName("palette").length / 2;
     let increment = direction === "left" ? 1: -1;
-    console.log(len)
-    console.log(current)
     if(current > 1 && current < len || direction === "right" && current === len || direction === "left" && current === 1){
         updateCurrent(current + increment)
     }
