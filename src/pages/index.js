@@ -6,7 +6,12 @@ import Home from "../components/home.jsx"
 const IndexPage = () => {
     return(
     <Layout title = "Ben Swanson-Ralph">
-        <Home />
+        <div className = "desktopView">
+            <Home mobile = {false} />
+        </div>
+        <div className = "mobileView">
+            <Home mobile = {true}/>
+        </div>
     </Layout>
     )
 }

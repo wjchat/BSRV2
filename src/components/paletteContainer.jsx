@@ -36,6 +36,13 @@ const PaletteContainer = props => {
       }
     }, 50)
   }
+  useEffect(()=>{
+      if(animate && props.mobile){
+          gsap.set(animate, {
+              pointerEvents: "none",
+          })
+      }
+  },[animate])
   useEffect(() => {
     if (props.showVideo) {
       gsap.to(animate, props.time * .5, {
@@ -50,7 +57,7 @@ const PaletteContainer = props => {
         opacity: 1,
         scale: 1,
         y: "0vw",
-        pointerEvents: "all",
+        pointerEvents: props.mobile ? "none" : "all",
         ease: Expo.easeOut,
       }) 
     }

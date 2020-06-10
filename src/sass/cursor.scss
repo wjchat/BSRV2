@@ -8,6 +8,9 @@
     top: 0;
     left: 0;
     pointer-events: none;
+    @include mobile{
+        display: none;
+    }
     .cursor{
         position: absolute;
         width: 8px;

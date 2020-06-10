@@ -9,6 +9,10 @@
   opacity: 1;
 top: 20vh;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    @include mobile{
+        width: 80vw;
+        margin-left: 10vw;
+    }
 
 //    pointer-events: none;
     img{
@@ -36,5 +40,9 @@ top: 20vh;
         @include body;
         opacity: 0;
         padding-top: 10px;
+        @include mobile{
+            width: 100%;
+            text-align: center;
+        }
     }
 }

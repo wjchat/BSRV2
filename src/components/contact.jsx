@@ -22,10 +22,12 @@ const Contact = (props) =>{
     }, [])
     return(<div className = "contactPage">   
         <ContactHalf 
+        mobile = {props.mobile}
         focus = {focus} 
         item = "second"
         updateFocus = {(ting)=>updateFocus(ting)}>
-           <h2 className = "change"><TransitionLink 
+           <h2 className = "change">
+           <TransitionLink 
            className = "link"
            to = "/"
         onMouseOver={() => ctx.cursorTransformation(true)}
@@ -62,6 +64,7 @@ const Contact = (props) =>{
            </div>
             </ContactHalf>
             <ContactHalf 
+            mobile = {props.mobile}
             focus = {focus} 
             item = "first"
             updateFocus = {(ting)=>updateFocus(ting)}

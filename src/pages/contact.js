@@ -16,11 +16,22 @@ const ContactPage = () =>{
     let info = data.strapiSocialLinks
     return(
         <Layout title = "Contact">
+        <div className = "desktopView">
            <Contact
+           mobile = {false}
            email = {info.email}
            insta = {info.instagram}
            vimeo = {info.vimeo}
              />
+        </div>        
+        <div className = "mobileView">
+           <Contact
+           mobile = {true}
+           email = {info.email}
+           insta = {info.instagram}
+           vimeo = {info.vimeo}
+             />
+        </div>
         </Layout>
           )
 }

@@ -3,24 +3,41 @@ $white: #fffafa;
 $sans: "Lato", sans-serif;
 $bodySize: 1.2vw;
 $padding: 0 5vw;
+$mobile-width: 450px;
 
+
+
+@mixin mobile {
+    @media (max-width: #{$mobile-width}) {
+        @content;
+    }
+}
 @mixin header{
     font-family: $sans;
     font-weight: 400;
     font-size: 2vw;
     letter-spacing: .11vw;
+    @include mobile{
+        font-size: 6vw;
+    }
 }
 @mixin subheader{
     font-family: $sans;
     font-weight: 900;
     font-size: 7vw;
     letter-spacing: .29vw;
+    @include mobile{
+        font-size: 14vw;
+    }
 }
 @mixin body{
     font-family: $sans;
     font-weight: 300;
     font-size: $bodySize;
-    letter-spacing: .07vw
+    letter-spacing: .07vw;
+    @include mobile{
+        font-size: $bodySize * 3;
+    }
 }
 body{
     background-color: $black;
@@ -44,4 +61,19 @@ body{
     font-size: .7vw;
     padding: $padding;
     opacity: .5;
+    @include mobile{
+        font-size: $bodySize * 2;
+    }
+}
+.desktopView{
+    @include mobile{
+        display: none;
+    }
+}
+
+.mobileView{
+    display: none;
+    @include mobile{
+        display: block;
+    }
 }

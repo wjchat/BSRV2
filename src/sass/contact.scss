@@ -5,10 +5,16 @@
     width: 100vw;
     display: flex;
     color: $black;
+    @include mobile{
+        flex-direction: column;
+    }
     &>div{
         flex-grow: 1;
         display: flex;
         flex-direction: column;
+        @include mobile{
+            height: 50vh;
+        }
     }
     h2{
         height: 20vh;
@@ -17,37 +23,60 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        a{
+            width: fit-content;
+            padding: 10px;
+            pointer-events: all;
+        }
     }
     .center{
-        height: 55vh;
+        height: 80vh;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        @include mobile{
+            height: fit-content;
+        }
     }
     h1{
         @include subheader;
         width: 100%;
         text-align: center;
-        height: 40vh;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+        @include mobile{
+            height: fit-content;
+        }
     }
     .info{
-        height: 20vh;
+        height: 11vw;
         display: flex;
         flex-direction: column;
         justify-content: center;
 //        border: solid red 1px;
+        @include mobile{
+            height: 30vw;
+        }
          h3{
             @include body;
             width: fit-content;
             margin: 0 auto;
              padding: .2vw;
+             font-size: $bodySize * 1.4;
+             @include mobile{
+                 font-size: $bodySize* 6;
+                 text-align: center;
+             }
         }   
         &.image{
             flex-direction: row;
             &>div{
                 width: 10vw;
+                @include mobile{
+                    width: 20vw;
+                    height: 80%;
+                }
                 &>div{
                     height: 100%;
                     width: 100%;

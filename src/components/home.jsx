@@ -10,6 +10,7 @@ import TopRight from "./topRight.jsx"
 import Video from "./video.jsx"
 import "../sass/home.scss"
 import TransitionLink from "gatsby-plugin-transition-link"
+import Swipe from "react-easy-swipe";
 
 
 let timer = 0;
@@ -76,22 +77,24 @@ const Home = props => {
   }, [showVid, timer])
 
   const handleMouseMove = useCallback(() => {
-      let items = document.body.getElementsByClassName("fadeAway")
-      gsap.to(items, .1,{
-          opacity: 1,
-      })
-    window.clearTimeout(timer)
-    if(showVid){
-        timer = window.setTimeout(() => {
-              gsap.to(items, .5,{
-                  opacity: 0,
-                  })
-            }, 4000)
-    }else{
+      if(!props.mobile){
+          let items = document.body.getElementsByClassName("fadeAway")
           gsap.to(items, .1,{
               opacity: 1,
           })
-    }
+        window.clearTimeout(timer)
+        if(showVid){
+            timer = window.setTimeout(() => {
+                  gsap.to(items, .5,{
+                      opacity: 0,
+                      })
+                }, 4000)
+        }else{
+              gsap.to(items, .1,{
+                  opacity: 1,
+              })
+        }
+      }
   }, [showVid, timer])
   
   const handleKey = useCallback(
@@ -99,7 +102,7 @@ const Home = props => {
       //    console.log(e.keyCode)
       if (e.keyCode === 39) {
         let num =
-          current < document.body.getElementsByClassName("palette").length &&
+          current < document.body.getElementsByClassName("palette").length /2 &&
           !showVid
             ? current + 1
             : current
@@ -115,11 +118,13 @@ const Home = props => {
     },
     [current, showVid]
   )
-
+  
+  //move photo reel when current is updated
   useEffect(() => {
     if (reel) {
+    let distance = props.mobile ? 80 : 50;
       gsap.to(reel, time, {
-        x: `${(current - 1) * -50}vw`,
+        x: `${(current - 1) * distance * -1}vw`,
         ease: "slick",
       })
     }
@@ -134,6 +139,15 @@ const handleMouseOut=useCallback(()=>{
     updateHover(current)
 }, [current])
 
+const moveReel = useCallback((direction)=>{
+    let len = document.body.getElementsByClassName("palette").length / 2;
+    let increment = direction === "left" ? 1: -1;
+    console.log(len)
+    console.log(current)
+    if(current > 1 && current < len || direction === "right" && current === len || direction === "left" && current === 1){
+        updateCurrent(current + increment)
+    }
+}, [current])
   return (
     <div className="homeContainer">
       <div className="header fadeAway">
@@ -161,6 +175,10 @@ const handleMouseOut=useCallback(()=>{
         </h1>
       </div>
       <div className="reel">
+       <Swipe
+       onSwipeLeft = {()=>moveReel("left")}
+       onSwipeRight = {()=>moveReel("right")}
+       >
         <div
           ref={div => (reel = div)}
           onMouseLeave={() => handleMouseOut()}
@@ -183,6 +201,7 @@ const handleMouseOut=useCallback(()=>{
           time={time}
           title={currentInfo.title}
         />
+        </Swipe>
       </div>
       <Video
         time={time}
@@ -191,6 +210,7 @@ const handleMouseOut=useCallback(()=>{
         role={currentInfo.role}
       />
       <PaletteContainer
+        mobile = {props.mobile}
         updateShow={b => updateShow(b)}
         time={time}
         showVideo={showVid}

@@ -37,6 +37,9 @@
     }
     .placeholder {
       width: 25vw;
+        @include mobile{
+            width: 10vw;
+        }
     }
   }
 }

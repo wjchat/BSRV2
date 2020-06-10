@@ -10,5 +10,8 @@
       -webkit-text-stroke-width: 2px;
       -webkit-text-stroke-color: $white;
     -webkit-font-smoothing: antialiased;
-
+    @include mobile{
+        left: 3vw;
+        max-width: 90vw;
+    }
 }

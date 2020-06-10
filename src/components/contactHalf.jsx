@@ -5,6 +5,7 @@ const ContactHalf = props => {
   let black = "#1B1818"
   let white = "#fffafa"
   let background
+  let events
 
   useEffect(() => {
     if (background) { 
@@ -15,14 +16,25 @@ const ContactHalf = props => {
           color: props.focus === props.item ? black : white,
         })
       }
-  }, [props.focus, background, props.item])
+      if(props.focus === props.item && events){
+          gsap.set(events,{
+              pointerEvents: "all",
+          })
+      }else{
+          gsap.set(events,{
+              pointerEvents: "none",
+          })
+      }
+  }, [props.focus, background, props.item, events])
 
   return (
     <div
       onMouseOver={() => props.updateFocus(props.item)}
       ref={div => (background = div)}
     >
-      {props.children}
+     <div ref = {div=>events=div}>
+          {props.children}
+     </div>
     </div>
   )
 }

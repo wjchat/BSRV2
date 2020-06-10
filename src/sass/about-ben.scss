@@ -22,12 +22,21 @@ height: 100vh;
       width: 66%;
       margin-left: auto;
       margin-right: auto;
+      @include mobile{
+          width: 100%;
+          flex-direction: column;
+      }
     & > .imageContainer {
     margin-left: auto;
     margin-right: auto;
       height: 60vh;
       width: 50%;
       position: relative;
+        @include mobile{
+            height: 66vw;
+            width: 66vw;
+            margin-top: 5vh;
+        }
       div {
         height: 100%;
         width: 100%;
@@ -46,6 +55,11 @@ height: 100vh;
           font-size: $bodySize;
           text-align: left;
           line-height: 110%;
+          @include mobile{
+              width: 83vw;
+              height: fit-content;
+              margin-top: 5vh;
+          }
       }
   }
 }
