@@ -11,7 +11,7 @@ const AboutBen = () => {
         picture {
           childImageSharp {
             fluid {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
