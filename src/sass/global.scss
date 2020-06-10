@@ -45,6 +45,9 @@ body{
     overflow: hidden;
     cursor: none;
     opacity: .7;
+    @include mobile{
+        overflow: scroll;
+    }
 }
 .link{
     opacity: .8;
