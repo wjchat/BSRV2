@@ -31,7 +31,7 @@ $sans: CastleType, "Lato", sans-serif;
     font-size: 6vw;
     letter-spacing: .2vw;
     @include mobile{
-        font-size: 14vw;
+        font-size: 12vw;
     }
 }
 @mixin body{

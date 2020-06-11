@@ -5,20 +5,20 @@
     width: 100vw;
     z-index: -1;
     &>img{
-//        display: none;
+        display: none;
         height: 100%;
         width: 100%;
         object-fit: cover;
     }
     &::after { 
-        display: none;
+//        display: none;
         content: "";
         position: absolute;
         width: 200vw;
         height:200vh;
         left: -50%;
         top: -50%;
-        background-image: url(../assets/images/grain.jpg);
+        background-image: url(../assets/images/darkItem.svg);
         animation: grainAnimation 1s steps(4) infinite;
         animation-duration: 1s;
         animation-timing-function: steps(4);

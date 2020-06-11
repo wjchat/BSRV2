@@ -7,12 +7,13 @@
     bottom: 0;
     left: 23vw;
     pointer-events: none;
-      -webkit-text-fill-color: rgba(0,0,0,.3); /* Will override color (regardless of order) */
-      -webkit-text-stroke-width: 3px;
+      -webkit-text-fill-color: rgba(0,0,0,.1); /* Will override color (regardless of order) */
+      -webkit-text-stroke-width: .2vw;
       -webkit-text-stroke-color: $white;
     -webkit-font-smoothing: antialiased;
     @include mobile{
         left: 3vw;
-        max-width: 90vw;
+        max-width: 80vw;
+    -webkit-text-stroke-width: .4vw;
     }
 }
