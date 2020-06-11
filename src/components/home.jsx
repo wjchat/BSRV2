@@ -126,6 +126,7 @@ const Home = props => {
       gsap.to(reel, time, {
         x: `${(current - 1) * distance * -1}vw`,
         ease: "slick",
+        rotate: 0,
       })
     }
   }, [current, reel])

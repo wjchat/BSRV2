@@ -1,11 +1,15 @@
 $black: #1B1818;
 $white: #fffafa;
-$sans: "Lato", sans-serif;
+
 $bodySize: 1.2vw;
 $padding: 0 5vw;
 $mobile-width: 450px;
 
-
+@font-face {
+    font-family: CastleType;
+    src: url("../assets/type/CastleType.otf") format("opentype");
+}
+$sans: CastleType, "Lato", sans-serif;
 
 @mixin mobile {
     @media (max-width: #{$mobile-width}) {
@@ -24,8 +28,8 @@ $mobile-width: 450px;
 @mixin subheader{
     font-family: $sans;
     font-weight: 900;
-    font-size: 7vw;
-    letter-spacing: .29vw;
+    font-size: 6vw;
+    letter-spacing: .2vw;
     @include mobile{
         font-size: 14vw;
     }
@@ -44,7 +48,7 @@ body{
     color: $white;
     overflow: hidden;
     cursor: none;
-    opacity: .7;
+    opacity: .8;
     @include mobile{
         overflow: scroll;
     }
