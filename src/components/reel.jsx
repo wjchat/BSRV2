@@ -24,14 +24,14 @@ const Reel = props => {
             }
             focusPic {
               childImageSharp {
-                fluid {
+                fluid(quality: 100) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
             reelPic {
               childImageSharp {
-                fluid {
+                fluid(quality: 100) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
