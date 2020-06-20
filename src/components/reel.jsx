@@ -17,11 +17,7 @@ const Reel = props => {
             title
             orderOfAppearance
             role
-            video {
-              publicURL
-              relativePath
-              absolutePath
-            }
+            videoLink
             focusPic {
               childImageSharp {
                 fluid(quality: 100) {

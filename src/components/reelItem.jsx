@@ -14,7 +14,7 @@ const ReelItem = props => {
       if (props.item.orderOfAppearance === props.current) {
         props.updateInfo({
           title: props.item.title,
-          video: props.item.video.publicURL,
+          video: props.item.videoLink,
             role: props.item.role
         })
         gsap.to(focus, props.time * 0.4, {
