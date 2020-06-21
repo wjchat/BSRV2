@@ -44,7 +44,7 @@ const Reel = props => {
   }
   return (
     <div
-     className = "reelContainer"
+     className = "reelContainer moveTrans" weight = "large"
       onMouseLeave={() =>handleMouseLeave()}
     >
       {items.map(item => (

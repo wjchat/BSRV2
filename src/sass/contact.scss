@@ -12,6 +12,7 @@
         flex-grow: 1;
         display: flex;
         flex-direction: column;
+        max-width: 50vw;
         @include mobile{
             height: 50vh;
         }
@@ -23,6 +24,11 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        transform: translateX(-3vw);
+        img{
+            max-height: 1.5vw;
+            fill: white;
+        }
         a{
             width: fit-content;
             padding: 10px;
@@ -70,19 +76,30 @@
              }
         }   
         &.image{
-            flex-direction: row;
-            &>div{
-                width: 10vw;
-                @include mobile{
-                    width: 20vw;
-                    height: 80%;
-                }
-                &>div{
-                    height: 100%;
-                    width: 100%;
-                    position: relative;
+            flex-direction: column;
+            text-align: center;
+            @include body;
+            font-size: $bodySize * 1.4;
+            color: black;
+            a{
+                opacity: .8;
+                transition: all .1s linear;
+                &:hover{
+                    opacity: 1;
                 }
             }
+//            &>div{
+//                width: 10vw;
+//                @include mobile{
+//                    width: 20vw;
+//                    height: 80%;
+//                }
+//                &>div{
+//                    height: 100%;
+//                    width: 100%;
+//                    position: relative;
+//                }
+//            }
             img{
                 object-fit: cover;
                 height: 60%;

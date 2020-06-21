@@ -1,6 +1,6 @@
 import React, {useEffect,useContext} from "react"
 import "../sass/pageTransition.scss"
-import gsap from "../esm/all"
+import {gsap, Power2} from "../esm/all"
 import LayoutContext from "./layoutContext.jsx"
 
 const PageTransition = props =>{
@@ -17,12 +17,12 @@ const PageTransition = props =>{
             })
             tl.to(one, time,{
                 width: "100vw",
-                ease: "easeOut"
+                ease: Power2.easeIn
             })
-            tl.to(two, time,{
+            tl.to(two, time * .5,{
                 width: "100vw",
-                ease: "easeIn"
-            }, `-=${time /2}`)
+                ease: Power2.easeIn,
+            }, `-=${time * .2}`)
             tl.set([one,two],{
             right: props.trigger === "right" ? "auto": 0,
               left: props.trigger === "right" ? 0: "auto",
@@ -30,9 +30,9 @@ const PageTransition = props =>{
             tl.set(document.getElementsByTagName("main"),{
                 display: "none",
             })
-            tl.to([one, two], time,{
+            tl.to([one, two], time * 1.5,{
                 width: "0vw",
-                ease: "easeOut"
+                ease: "easeInOut"
             })
             tl.call(()=>ctx.triggerTrans(false))
         }

@@ -1,6 +1,7 @@
 @import "global";
     
 .title{
+    z-index: 10;
     width: 80vw;
     position: absolute;
     @include subheader;

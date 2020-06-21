@@ -47,7 +47,7 @@ body{
     background-color: $black;
     color: $white;
     overflow: hidden;
-    cursor: none;
+//    cursor: none;
     opacity: .8;
     @include mobile{
         overflow: scroll;

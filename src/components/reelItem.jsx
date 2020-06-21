@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useCallback } from "react"
+import React, { useEffect, useContext, useCallback, useState } from "react"
 
 import Img from "gatsby-image"
 import LayoutContext from './layoutContext.jsx' 
@@ -9,8 +9,13 @@ const ReelItem = props => {
   let focus
   let animate
   let ctx = useContext(LayoutContext)
+  const [canChange, updateCanChange] = useState(true)
   useEffect(() => {
-    if (focus) {
+      updateCanChange(false);
+      setTimeout(()=>{
+          updateCanChange(true);
+      }, props.time * 1000)
+      if (focus) {
       if (props.item.orderOfAppearance === props.current) {
         props.updateInfo({
           title: props.item.title,
@@ -67,13 +72,16 @@ const ReelItem = props => {
   }, [props.showVideo, animate, props.item.orderOfAppearance, props.current])
     
   const handleClick = useCallback(() => {
+      if(!canChange){
+          return
+      }
     if (props.current === props.item.orderOfAppearance) {
       props.updateShow(true)
     ctx.cursorTransformation(false)
     } else {
       props.updateCurrent(props.item.orderOfAppearance)
     }
-  }, [props.current])
+  }, [props.current, canChange])
   
   
   const handleHover = useCallback(()=>{

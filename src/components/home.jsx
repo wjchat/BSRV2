@@ -11,6 +11,7 @@ import Video from "./video.jsx"
 import "../sass/home.scss"
 import TransitionLink from "gatsby-plugin-transition-link"
 import Swipe from "react-easy-swipe";
+import moveItems from "./moveitems.js";
 
 
 let timer = 0;
@@ -158,17 +159,21 @@ const moveReel = useCallback((direction)=>{
         />
         <h1 ref = {div=>contact=div}>
         <TransitionLink 
-        className = "link"
+        className = "link moveTrans"
         to="contact"
         onMouseOver={() => ctx.cursorTransformation(true)}
         onMouseLeave={() => ctx.cursorTransformation(false)}
         exit = {{
                   length: 1.4,
-                    trigger: ()=>ctx.triggerTrans("right")
+                    trigger: ()=>{
+                        ctx.triggerTrans("right")
+                        moveItems("right", "start")
+                    }
               }}
         entry = {{
 //                  length: 2,
                   delay: .7,
+                    trigger: () => moveItems("left")
               }}
         >CONTACT</TransitionLink>
         </h1>
@@ -177,6 +182,7 @@ const moveReel = useCallback((direction)=>{
        <Swipe
        onSwipeLeft = {()=>moveReel("left")}
        onSwipeRight = {()=>moveReel("right")}
+       className = "swipeContainer"
        >
         <div
           ref={div => (reel = div)}
@@ -194,12 +200,14 @@ const moveReel = useCallback((direction)=>{
             current={current}
           />
         </div>
-        <Title
-          showVideo={showVid}
-          direction={prev < current ? 1 : -1}
-          time={time}
-          title={currentInfo.title}
-        />
+        <div className = "titleContainer moveTrans">
+            <Title
+              showVideo={showVid}
+              direction={prev < current ? 1 : -1}
+              time={time}
+              title={currentInfo.title}
+            />
+        </div>
         </Swipe>
       </div>
       <Video
@@ -208,6 +216,7 @@ const moveReel = useCallback((direction)=>{
         show={showVid}
         role={currentInfo.role}
       />
+      <div className = "moveTrans">
       <PaletteContainer
         mobile = {props.mobile}
         updateShow={b => updateShow(b)}
@@ -218,6 +227,7 @@ const moveReel = useCallback((direction)=>{
         current={current}
         direction={prev < current ? 1 : -1}
       />
+      </div>
       <p className = "change foot fadeAway"><span
       style = {{
                   opacity: .5,

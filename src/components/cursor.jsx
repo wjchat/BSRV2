@@ -4,6 +4,10 @@ import {gsap,Power3, Power2, Back} from "../esm/all"
 import arrow from "../assets/images/arrow.svg"
 import expand from "../assets/images/expand.svg"
 
+const getWidth = () =>{
+    let width = window.innerWidth < 1000 ? window.innerWidth : 1000;
+    return (Math.floor(width * .06))
+}
 
 const Cursor = props =>{
     let cursor
@@ -11,6 +15,15 @@ const Cursor = props =>{
     const [cursorType, updateCursorType] = useState(null)
     const [cursorElem, updateCursorElem] = useState(null)
     const [cursorElem2, updateCursorElem2] = useState(null)
+    const [width, updateWidth] = useState(null);
+    useEffect(()=>{
+        if(!width){
+            window.addEventListener(("resize"), () =>{
+                updateWidth(getWidth())
+            })
+            updateWidth(getWidth())
+        }
+    }, [width])
     useEffect(()=>{
         if(cursor && cursor2){
             updateCursorElem(cursor)
@@ -19,10 +32,14 @@ const Cursor = props =>{
     }, [cursor, cursor2])
     
     useEffect(()=>{
-        if(cursorElem && cursorElem2){
-            window.addEventListener("mousemove", handleMove)
+        window.addEventListener("mousemove", handleMove)
+        if(cursorElem && cursorElem2 && width){
+            gsap.set([cursorElem, cursorElem2], {
+                height: width,
+                width: width,
+            })
         }
-    }, [cursorElem, cursorElem2])
+    }, [cursorElem, cursorElem2, width])
     
     useEffect(()=>{
         if(cursor && cursor2){
@@ -38,14 +55,15 @@ const Cursor = props =>{
         }
     },[props.cursorType, cursor, cursor2])
     const handleMove = useCallback((e) =>{
+        let winWidth = getWidth()
         gsap.to(cursorElem, .1, {
-            x: e.x - 45,
-            y: e.y - 45,
+            x: e.x - winWidth / 2,
+            y: e.y - winWidth / 2,
             ease: Power2.easeOut,
         })            
         gsap.to(cursorElem2, .5, {
-                x: e.x - 45,
-                y: e.y - 45,
+                x: e.x - winWidth / 2,
+                y: e.y - winWidth / 2,
                 ease: "easeIn",
             })
     }, [cursorElem, cursorElem2])

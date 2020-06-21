@@ -4,9 +4,21 @@ import {gsap, Power3, Power2, Expo} from "../esm/all"
 
 const Title = props =>{
     let animate
-    let [title, updateTitle] = useState(null)
+    const [title, updateTitle] = useState(null)
+    const [firstTime, updateFirstTime] = useState(true)
     useEffect(()=>{
         if(animate){
+            //doesnt animate title when first landing on page
+            if(firstTime){
+                updateTitle(props.title)
+                gsap.set(animate,{
+                    opacity: 1,
+                })
+                setTimeout(()=>{
+                    updateFirstTime(false)
+                }, 500)
+                return
+            }
             let tl = gsap.timeline();
             tl.to(animate, props.time * .4,{
                 opacity: 0,

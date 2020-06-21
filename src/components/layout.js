@@ -15,9 +15,6 @@ import { CustomEase } from "../esm/CustomEase";
 
 gsap.registerPlugin(CustomEase);
 const Layout = (props) => {  
-    useEffect(()=>{
-        console.log("Website by Will Chatterson <wchatterson@gmail.com>")
-    }, [])
     CustomEase.create("slick", ".25,.1,.25,1");
     CustomEase.create("slickIn", "M0,0 C0.5,0 0.826,0.086 0.87,0.112 0.965,0.169 0.9,0.23 1,1 ");
                       

@@ -1,9 +1,11 @@
-import React,{useState} from "react";
+import React,{useState, useCallback} from "react";
 import gsap from "../esm/all"
 
 const Email = props =>{
-    let message
+    const [message, updateMessage] = useState("CLICK EMAIL TO COPY")
+    let messageItem
     const handleClick=() =>{
+    updateMessage(props.message)    
     const el = document.createElement("textarea")
     el.value = props.email
     document.body.appendChild(el)
@@ -11,28 +13,35 @@ const Email = props =>{
     document.execCommand("copy")
     document.body.removeChild(el)  
     let tl = gsap.timeline()
-    tl.set(message,{
-        opacity: 1,
-    })
-        .to(message, 1, {
-        opacity: 0,
-        delay: 2,
-    })
+//    tl.set(messageItem,{
+//        opacity: 1,
+//    })
+//        .to(messageItem, 1, {
+//        opacity: 1,
+//        delay: 2,
+//    })
     }
     const handleMouseLeave = () =>{
         props.onMouseLeave()
     }
+    const handleEnter = useCallback(() =>{
+        props.onMouseEnter()
+        gsap.set(messageItem, {
+            opacity: 1,
+        })
+    }, [messageItem])
     return(<>
-        <h3 
+        <p
         onClick = {()=>handleClick()}
-        onMouseEnter = {()=>props.onMouseEnter()}
+        onMouseEnter = {()=> handleEnter()}
         onMouseLeave = {()=>handleMouseLeave()}
-        className = "link">{props.email}</h3>
-        <h3
+        className = "link">{props.email}</p>
+        <br />
+        <p
         style = {{
-                opacity: 0,
+                opacity: .8,
             }}
-          ref = {div=>message=div}>{props.message}</h3>
+          ref = {div=>messageItem=div}>{message}</p>
     </>)
 }
 export default Email

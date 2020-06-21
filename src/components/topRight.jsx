@@ -4,6 +4,7 @@ import "../sass/topRight.scss"
 import { Link } from "gatsby"
 import LayoutContext from "./layoutContext.jsx"
 import TransitionLink from "gatsby-plugin-transition-link"
+import moveItems from "./moveitems.js"
 
 const TopRight = props => {
   let ctx = useContext(LayoutContext)
@@ -68,10 +69,14 @@ const TopRight = props => {
         onMouseLeave={() => ctx.cursorTransformation(false)}
         exit = {{
                   length: 1.4,
-                    trigger: ()=>ctx.triggerTrans("left")
+                    trigger: ()=>{
+                        ctx.triggerTrans("left")
+                        moveItems("left", "start")
+                    }
               }}
         entry = {{
                   delay: .7,
+                    trigger: ()=>moveItems("right")
               }}
         >BSR</TransitionLink>
       </h1>

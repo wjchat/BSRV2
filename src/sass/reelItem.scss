@@ -5,6 +5,8 @@
     height: 100%;
     position: relative;
     z-index: 10;
+    margin-top: auto;
+    margin-bottom: auto;
     @include mobile{
         width: 80vw;
     }
