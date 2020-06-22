@@ -2,14 +2,14 @@
 
 .topRight{
 //    border: solid white 1px;
-    width: 20vw;
+    width: 40vw;
     position: relative;
     display: flex;
     justify-content: flex-start;
     h1{
         position: absolute;
         height: 100%;
-        width: 100%;
+        width: fit-content;
         @include header;
         text-align: left;
         padding: $padding;

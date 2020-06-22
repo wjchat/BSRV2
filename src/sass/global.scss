@@ -48,7 +48,7 @@ body{
     color: $white;
     overflow: hidden;
     cursor: none;
-    opacity: .8;
+    opacity: .9;
     @include mobile{
         overflow: scroll;
     }
@@ -82,5 +82,30 @@ body{
     display: none;
     @include mobile{
         display: block;
+    }
+}
+.rightSlight{
+    transition: margin .2s ease 0s;
+    margin-left: 0px;
+    &:hover{
+        margin-left: 2px;
+    }
+}
+.leftSlight{
+    transition: margin .2s ease 0s;
+    margin-right: 0px;
+    &:hover{
+        margin-right: 2px;
+    }
+}
+.navArrow{
+    max-height: 1.5vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    @include mobile{
+        max-height: 4.3vw;
+    }
+    &.arrowFlip{
+        transform: rotate(180deg);
     }
 }

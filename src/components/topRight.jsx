@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 import LayoutContext from "./layoutContext.jsx"
 import TransitionLink from "gatsby-plugin-transition-link"
 import moveItems from "./moveitems.js"
+import arrow from "../assets/images/whiteright.svg"
 
 const TopRight = props => {
   let ctx = useContext(LayoutContext)
@@ -63,7 +64,7 @@ const TopRight = props => {
       <h1
        ref={div => (contact = div)}>
         <TransitionLink 
-        className = "link"
+        className = "link rightSlight moveTrans"
         to="about-ben"
         onMouseOver={() => ctx.cursorTransformation(true)}
         onMouseLeave={() => ctx.cursorTransformation(false)}
@@ -78,7 +79,7 @@ const TopRight = props => {
                   delay: .7,
                     trigger: ()=>moveItems("right")
               }}
-        >BSR</TransitionLink>
+        ><img className = "navArrow arrowFlip" src={arrow} alt=""/> BSR</TransitionLink>
       </h1>
     </div>
   )

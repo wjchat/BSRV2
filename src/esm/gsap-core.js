@@ -84,7 +84,8 @@ _relExp = /[+-]=-?[\.\d]+/,
   return console.warn("Invalid property", property, "set to", value, "Missing plugin? gsap.registerPlugin()");
 },
     _warn = function _warn(message, suppress) {
-  return !suppress && console.warn(message);
+//  return !suppress && console.warn(message);
+        return
 },
     _addGlobal = function _addGlobal(name, obj) {
   return name && (_globals[name] = obj) && _installScope && (_installScope[name] = obj) || _globals;

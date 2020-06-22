@@ -1,4 +1,4 @@
-import gsap from "../esm/all"
+import {gsap, Power2} from "../esm/all"
 
 //function that takes every element on the page with "moveTrans" as a classname. moves those elements laterally for a cool page transition
 const moveItems = (direction, when) => {
@@ -18,7 +18,7 @@ const moveItems = (direction, when) => {
       })
       gsap.to(each, time, {
         x: 0,
-        ease: "easeOut",
+        ease: Power2.easeOut,
         delay: Math.random() * 0.1,
       })
     }else{

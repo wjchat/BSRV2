@@ -15,14 +15,6 @@ height: 100vh;
       @include header;
       height: fit-content;
     padding: $padding;
-        img{
-            max-height: 1.6vw;
-            margin-top: auto;
-            margin-bottom: auto;
-            @include mobile{
-                max-height: 4.3vw;
-            }
-        }
     }
   }
   .content {

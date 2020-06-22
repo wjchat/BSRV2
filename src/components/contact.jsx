@@ -32,7 +32,7 @@ const Contact = props => {
       >
         <h2 className="change">
           <TransitionLink
-            className="link moveTrans"
+            className="link moveTrans rightSlight"
             to="/"
             onMouseOver={() => ctx.cursorTransformation(true)}
             onMouseLeave={() => ctx.cursorTransformation(false, black)}
@@ -48,7 +48,7 @@ const Contact = props => {
                 trigger: () => moveItems("right"),
             }}
           >
-            <img className = "blackArrow" src={arrow} alt=""/> WORK 
+            <img className = "navArrow" src={arrow} alt=""/> WORK 
           </TransitionLink>
         </h2>
         <div className="center">
@@ -56,21 +56,38 @@ const Contact = props => {
           <div className="info image">
             <p>
               <a
-                onMouseEnter={() => ctx.cursorTransformation(true)}
-                onMouseLeave={() => ctx.cursorTransformation(false, black)}
+                onMouseEnter={() => {
+                        ctx.cursorTransformation(true)
+                        ctx.updateCursorType("newTab")
+                        }
+                    }
+                onMouseLeave={() => {
+                        ctx.cursorTransformation(false, black)
+                        ctx.updateCursorType("cursor")
+                                    }
+                    }
+                    
                 href={props.insta}
               >
-                {props.insta}
+                INSTAGRAM
               </a>
             </p>{" "}
             <br />
             <p>
               <a
-                onMouseEnter={() => ctx.cursorTransformation(true)}
-                onMouseLeave={() => ctx.cursorTransformation(false, black)}
+                onMouseEnter={() => {
+                        ctx.cursorTransformation(true)
+                        ctx.updateCursorType("newTab")
+                        }
+                    }
+                onMouseLeave={() => {
+                        ctx.cursorTransformation(false, black)
+                        ctx.updateCursorType("cursor")
+                                    }
+                    }
                 href={props.vimeo}
               >
-                {props.vimeo}
+                VIMEO
               </a>
             </p>
           </div>
@@ -87,8 +104,16 @@ const Contact = props => {
           <h1 className="change moveTrans" weight = "large">EMAIL</h1>
           <div className="info image moveTrans">
             <Email
-              onMouseEnter={() => ctx.cursorTransformation(true)}
-              onMouseLeave={() => ctx.cursorTransformation(false, black)}
+                onMouseEnter={() => {
+                        ctx.cursorTransformation(true)
+                        ctx.updateCursorType("copy")
+                        }
+                    }
+                onMouseLeave={() => {
+                        ctx.cursorTransformation(false, black)
+                        ctx.updateCursorType("cursor")
+                                    }
+                    }
               email={props.email}
               message={"EMAIL COPIED TO CLIPBOARD"}
             />

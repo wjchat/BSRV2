@@ -26,6 +26,11 @@
         width: 100%;
         position: absolute;
         top: 0;
+        filter: brightness(20%);
+        transition: filter .3s ease 0s;
+        &:hover{
+            filter: brightness(40%);
+        }
         div{
             height: 100%;
             width: 100%;
@@ -34,6 +39,8 @@
         }
         &.focus{
             opacity: 0;
+            filter: brightness(100%);
+            pointer-events: none;
         }
     }
 }

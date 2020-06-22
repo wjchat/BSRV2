@@ -101,7 +101,7 @@ const ReelItem = props => {
       ref={div => (animate = div)}
       onClick={() => handleClick()}
       className="itemContainer"
-      onMouseEnter = {()=>handleHover()}
+      onMouseMove = {()=>handleHover()}
     >
       <div className="image">
         <Img fluid={props.item.reelPic.childImageSharp.fluid} />

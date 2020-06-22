@@ -3,7 +3,7 @@ import TransitionLink from "gatsby-plugin-transition-link"
 import LayoutContext from "../components/layoutContext.jsx"
 import "../sass/about-ben.scss"
 import Img from "gatsby-image"
-import arrow from "../assets/images/arrow.svg"
+import arrow from "../assets/images/whiteright.svg"
 import moveItems from "./moveitems.js"
 
 
@@ -11,10 +11,10 @@ const About = props =>{
     let ctx = useContext(LayoutContext)
     return(
         <div className = "aboutContainer">
-                 <div className = "header">
+                 <div className = "header moveTrans">
                      <h2>
                              <TransitionLink 
-        className = "link moveTrans"
+        className = "link leftSlight"
         to="/"
         onMouseOver={() => ctx.cursorTransformation(true)}
         onMouseLeave={() => ctx.cursorTransformation(false)}
@@ -30,7 +30,7 @@ const About = props =>{
                   delay: .7,
                       trigger: () => moveItems("left")
               }}
-        >WORK <img src = {arrow} /></TransitionLink>
+        >WORK <img className = "navArrow" src = {arrow} /></TransitionLink>
                      </h2>
                  </div>
                 <div className = "content">

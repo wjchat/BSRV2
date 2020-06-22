@@ -12,6 +12,7 @@ import "../sass/home.scss"
 import TransitionLink from "gatsby-plugin-transition-link"
 import Swipe from "react-easy-swipe";
 import moveItems from "./moveitems.js";
+import arrow from "../assets/images/whiteright.svg"
 
 
 let timer = 0;
@@ -159,7 +160,7 @@ const moveReel = useCallback((direction)=>{
         />
         <h1 ref = {div=>contact=div}>
         <TransitionLink 
-        className = "link moveTrans"
+        className = "link moveTrans leftSlight"
         to="contact"
         onMouseOver={() => ctx.cursorTransformation(true)}
         onMouseLeave={() => ctx.cursorTransformation(false)}
@@ -175,7 +176,7 @@ const moveReel = useCallback((direction)=>{
                   delay: .7,
                     trigger: () => moveItems("left")
               }}
-        >CONTACT</TransitionLink>
+        >CONTACT <img src={arrow} className = "navArrow" alt=""/></TransitionLink>
         </h1>
       </div>
       <div className="reel">

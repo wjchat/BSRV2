@@ -3,6 +3,8 @@ import "../sass/cursor.scss"
 import {gsap,Power3, Power2, Back} from "../esm/all"
 import arrow from "../assets/images/arrow.svg"
 import expand from "../assets/images/expand.svg"
+import newTab from "../assets/images/newTab.svg"
+import copy from "../assets/images/copy.svg"
 
 const getWidth = () =>{
     let width = window.innerWidth < 1000 ? window.innerWidth : 1000;
@@ -51,6 +53,10 @@ const Cursor = props =>{
                 updateCursorType(<img style = {{transform: "rotate(180deg)"}} src = {arrow} alt = "left"/>)
             }else if(props.cursorType === "play"){
                 updateCursorType(<img src={expand} alt="play"/>)
+            }else if(props.cursorType === "newTab"){
+                updateCursorType(<img style = {{transform: "scale(.8)"}} src={newTab}/>)
+            }else if(props.cursorType === "copy"){
+                updateCursorType(<img style = {{transform: "scale(.8)"}} src={copy}/>)
             }
         }
     },[props.cursorType, cursor, cursor2])
