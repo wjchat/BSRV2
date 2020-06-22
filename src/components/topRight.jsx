@@ -6,6 +6,7 @@ import LayoutContext from "./layoutContext.jsx"
 import TransitionLink from "gatsby-plugin-transition-link"
 import moveItems from "./moveitems.js"
 import arrow from "../assets/images/whiteright.svg"
+import x from "../assets/images/x.svg"
 
 const TopRight = props => {
   let ctx = useContext(LayoutContext)
@@ -55,11 +56,10 @@ const TopRight = props => {
        ref={div => (back = div)}>
         <span
         onClick={() => props.updateShow(false)}
-        className = "link"
+        className = "link shrinkBack"
         onMouseEnter={() => ctx.cursorTransformation(true)}
         onMouseLeave={() => ctx.cursorTransformation(false)}
-        >
-        BACK</span>
+        ><img src = {x} className = "navArrow"/> BACK</span>
       </h1>
       <h1
        ref={div => (contact = div)}>

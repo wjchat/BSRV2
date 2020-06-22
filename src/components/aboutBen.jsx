@@ -5,9 +5,11 @@ import "../sass/about-ben.scss"
 import Img from "gatsby-image"
 import arrow from "../assets/images/whiteright.svg"
 import moveItems from "./moveitems.js"
+import ReactMarkdown from "react-markdown"
 
 
 const About = props =>{
+    console.log(props.aboutText)
     let ctx = useContext(LayoutContext)
     return(
         <div className = "aboutContainer">
@@ -37,7 +39,7 @@ const About = props =>{
                     <div className = "imageContainer moveTrans" weight = "large">
                         <Img fluid = {props.picture} />
                     </div>
-                        <p className="moveTrans" weight = "large">{props.aboutText}</p>
+                        <p className="moveTrans" weight = "large"><ReactMarkdown className = "markdown" source = {props.aboutText} /></p>
                 </div>
                    
               <p className = "foot moveTrans">&copy;2020 Ben Swanson-Ralph</p>

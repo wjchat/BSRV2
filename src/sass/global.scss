@@ -109,3 +109,10 @@ body{
         transform: rotate(180deg);
     }
 }
+.shrinkBack{
+    margin-left: -1.5vw;
+    transition: .2s transform ease 0s;
+    &:hover{
+        transform: scale(.95);
+    }
+}

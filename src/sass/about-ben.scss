@@ -43,7 +43,7 @@ height: 100vh;
         position: absolute;
       }
     }
-      p{
+      &>p{
           @include body;
           width: 40%;
           margin-left: auto;
