@@ -79,7 +79,7 @@ const TopRight = props => {
                   delay: .7,
                     trigger: ()=>moveItems("right")
               }}
-        ><img className = "navArrow arrowFlip" src={arrow} alt=""/> BSR</TransitionLink>
+        ><span><img className = "navArrow arrowFlip" src={arrow} alt=""/> BSR</span></TransitionLink>
       </h1>
     </div>
   )
