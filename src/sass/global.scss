@@ -22,7 +22,7 @@ $sans: CastleType, "Lato", sans-serif;
     font-size: 2vw;
     letter-spacing: .11vw;
     @include mobile{
-        font-size: 6vw;
+        font-size: 5vw;
     }
 }
 @mixin subheader{
@@ -103,7 +103,7 @@ body{
     margin-top: auto;
     margin-bottom: auto;
     @include mobile{
-        max-height: 4.3vw;
+        max-height: 3.3vw;
     }
     &.arrowFlip{
         transform: rotate(180deg);
