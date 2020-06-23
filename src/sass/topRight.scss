@@ -19,5 +19,8 @@
         &>*{
             width: fit-content;
         }
+        &.backDiv{
+            opacity: 0;
+        }
     }
 }

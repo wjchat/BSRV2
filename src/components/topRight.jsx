@@ -53,6 +53,7 @@ const TopRight = props => {
   return (
     <div className="topRight">
       <h1
+      className = "backDiv"
        ref={div => (back = div)}>
         <span
         onClick={() => props.updateShow(false)}
